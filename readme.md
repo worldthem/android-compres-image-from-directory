@@ -1,16 +1,14 @@
-Hi,
+# The example bellow will Crop and Compress image in android by path
+
 spending a loot of time try to understand how to compress images from directory and finaly get to the working version find it bellow
 
-The example bellow will Crop and Compress image
-
 use it  like
-
 mimifyImage("imageName.jpg");
 
 
 
- // compress image for slow internet
-    public void compressImage(String finalFileName){
+```  
+public void compressImage(String finalFileName){
 
         ReadFile fileReader= new ReadFile();
         //mypicture is a folder in Pictures
@@ -54,5 +52,6 @@ mimifyImage("imageName.jpg");
             Log.d( MainActivity.DEBUG_TAG, "File not saved: " + error.getMessage());
         }
 
-
-    }
+}
+    
+```
