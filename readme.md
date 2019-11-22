@@ -9,12 +9,9 @@ mimifyImage("imageName.jpg");
 
 ```  
 public void compressImage(String finalFileName){
-
-        ReadFile fileReader= new ReadFile();
-        //mypicture is a folder in Pictures
-        String pathName = fileReader.getDirFile("mypicture").getPath()+ File.separator +"Picture_"+finalFileName+".jpg";
+      //mypicture is a folder in Pictures
+        String pathName =  getDirFile("mypicture").getPath()+ File.separator +"Picture_"+finalFileName+".jpg";
       
-
         Bitmap myBitmap =  BitmapFactory.decodeFile(pathName);
         final int maxSize = 1100;
         int outWidth;
@@ -33,7 +30,7 @@ public void compressImage(String finalFileName){
 
 
         try {
-            // File f = new File(fileReader.getDirFile("CameraAPIDemo").getPath()+ File.separator +"Picture_newwwwww.jpg"  );
+            // File f = new File(getDirFile("CameraAPIDemo").getPath()+ File.separator +"Picture_newwwwww.jpg"  );
              //f.createNewFile();
 
             File f = new File(pathName);
@@ -53,5 +50,13 @@ public void compressImage(String finalFileName){
         }
 
 }
+
+
+ public File getDirFile( String pathName) {
+        File sdDir = Environment
+                .getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
+        return new File(sdDir, pathName);
+
+    }
     
 ```
